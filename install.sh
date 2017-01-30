@@ -4,7 +4,7 @@ echo "Install required packages"
 case `uname` in
     Linux )
         sudo apt-get update
-        sudo apt-get install build-essential python-pip libffi-dev python-dev libpq-dev
+        sudo apt-get install build-essential python-pip libffi-dev python-dev libpq-dev python-mysqldb
         sudo pip install virtualenv
         ;;
     Darwin )
