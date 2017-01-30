@@ -26,10 +26,10 @@ MYSQLDATABASE = CONFIG.get('mysql','database')
 
 if APP_ENV == 'dev' or APP_ENV == 'live':
     DB_CONFIG = (MYSQLUSER, MYSQLPASSWORD, MYSQLHOST, MYSQLDATABASE)
-    DATABASE_URL = "mysql+mysqlconnector://%s:%s@%s/%s" % DB_CONFIG
+    DATABASE_URL = "mysql+pymysql://%s:%s@%s/%s" % DB_CONFIG
 else:
     DB_CONFIG = (MYSQLHOST, MYSQLDATABASE)
-    DATABASE_URL = "mysql+mysqlconnector://%s/%s" % DB_CONFIG
+    DATABASE_URL = "mysql+pymysql://%s/%s" % DB_CONFIG
 
 DB_ECHO = True if CONFIG['database']['echo'] == 'yes' else False
 DB_AUTOCOMMIT = True
