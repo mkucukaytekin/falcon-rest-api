@@ -7,3 +7,4 @@ itsdangerous==0.24
 shortuuid==0.4.2
 cryptography==1.5.3
 cerberus==0.9
+pymysql==0.7.9
