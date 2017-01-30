@@ -31,7 +31,7 @@ else:
     DB_CONFIG = (MYSQLHOST, MYSQLDATABASE)
     DATABASE_URL = "mysql+pymysql://%s/%s" % DB_CONFIG
 
-DB_ECHO = True if CONFIG['database']['echo'] == 'yes' else False
+DB_ECHO = True if CONFIG.get('database','echo') == 'yes' else False
 DB_AUTOCOMMIT = True
 
-LOG_LEVEL = CONFIG['logging']['level']
+LOG_LEVEL = CONFIG.get('logging','level')
