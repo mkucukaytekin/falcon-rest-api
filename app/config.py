@@ -17,7 +17,7 @@ INI_FILE = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
         '../conf/{}.ini'.format(APP_ENV))
 
-CONFIG = configparser.ConfigParser()
+CONFIG = ConfigParser.ConfigParser()
 CONFIG.read(INI_FILE)
 MYSQL = CONFIG['mysql']
 if APP_ENV == 'dev' or APP_ENV == 'live':
