@@ -5,7 +5,7 @@ import configparser
 from itertools import chain
 
 
-BRAND_NAME = 'Falcon REST API Template'
+BRAND_NAME = 'Backend REST API'
 
 SECRET_KEY = 'xs4G5ZD9SwNME6nWRWrK_aq6Yb9H8VJpdwCzkTErFPw='
 UUID_LEN = 10
@@ -19,12 +19,12 @@ INI_FILE = os.path.join(
 
 CONFIG = configparser.ConfigParser()
 CONFIG.read(INI_FILE)
-POSTGRES = CONFIG['postgres']
+MYSQL = CONFIG['mysql']
 if APP_ENV == 'dev' or APP_ENV == 'live':
-    DB_CONFIG = (POSTGRES['user'], POSTGRES['password'], POSTGRES['host'], POSTGRES['database'])
+    DB_CONFIG = (MYSQL['user'], MYSQL['password'], MYSQL['host'], MYSQL['database'])
     DATABASE_URL = "postgresql+psycopg2://%s:%s@%s/%s" % DB_CONFIG
 else:
-    DB_CONFIG = (POSTGRES['host'], POSTGRES['database'])
+    DB_CONFIG = (MYSQL['host'], MYSQL['database'])
     DATABASE_URL = "postgresql+psycopg2://%s/%s" % DB_CONFIG
 
 DB_ECHO = True if CONFIG['database']['echo'] == 'yes' else False
