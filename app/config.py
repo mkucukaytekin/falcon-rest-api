@@ -22,10 +22,10 @@ CONFIG.read(INI_FILE)
 MYSQL = CONFIG['mysql']
 if APP_ENV == 'dev' or APP_ENV == 'live':
     DB_CONFIG = (MYSQL['user'], MYSQL['password'], MYSQL['host'], MYSQL['database'])
-    DATABASE_URL = "mysql://%s:%s@%s/%s" % DB_CONFIG
+    DATABASE_URL = "mysql+mysqlconnector://%s:%s@%s/%s" % DB_CONFIG
 else:
     DB_CONFIG = (MYSQL['host'], MYSQL['database'])
-    DATABASE_URL = "mysql://%s/%s" % DB_CONFIG
+    DATABASE_URL = "mysql+mysqlconnector://%s/%s" % DB_CONFIG
 
 DB_ECHO = True if CONFIG['database']['echo'] == 'yes' else False
 DB_AUTOCOMMIT = True
