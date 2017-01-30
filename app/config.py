@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-import configparser
+import ConfigParser
 from itertools import chain
 
 
